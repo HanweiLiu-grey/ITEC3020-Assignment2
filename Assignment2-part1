@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark/Light mdoe</title>
+    <style>
+        body{
+            background-color: white;
+            color: black;
+            font-family: 25px;
+            margin: 1px;
+            padding: 10px;
+        }
+        
+        body.dark-mode{
+              background-color: #121212;
+              color: blue;
+        }
+        
+        button {
+            display: block;
+            width: 200px;
+            height: 80px;
+            background-color: rgb(255, 255, 255);
+            color: rgb(241, 62, 62);
+            text-decoration: none;
+            text-align: center;
+            line-height: 80px;
+            font-size: 18px;
+            border: 2px solid rgb(96, 204, 106);
+            padding: 3px 10px;
+            box-shadow: 1px 1px 2px;
+            border-radius: 10px;
+
+        }
+
+        button:hover{
+            background-color: #608dd9;
+        }
+         div{
+            width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-top: 60px;
+            line-height: 1.6;
+        }
+         .card {
+            background-color: white;
+            border: 1px solid white;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 150px;
+            box-shadow: 5px 5px 5px rgba(0,0,0,0.05);
+        }
+
+    </style>
+    
+</head>
+<body>
+
+    <button id = "Switch button">Click to Dark mode</button>
+        <div class="card">
+            <h1>Switch button</h1>
+                <p>Click the botton to Switch between light mode and dark mode</p>
+            </div>
+
+<script>
+  const SwitchButton = document.getElementById('Switch button');
+  const currentTheme = localStorage.getItem('Switch button');
+
+  if (currentTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    SwitchButton.textContent = 'Switch to Light Mode';
+  } else {
+    document.body.classList.add('light-mode');
+    SwitchButton.textContent = 'Switch to Dark Mode';
+  }
+
+  SwitchButton.addEventListener('click', function(){
+    if (document.body.classList.contains('dark-mode')) {
+      document.body.classList.remove('dark-mode');
+      document.body.classList.add('light-mode');
+      SwitchButton.textContent = 'Switch to Dark Mode';
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.body.classList.remove('light-mode');
+      document.body.classList.add('dark-mode');
+      SwitchButton.textContent = 'Switch to Light Mode';
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+</script>           
+</body>
+
+</html>
