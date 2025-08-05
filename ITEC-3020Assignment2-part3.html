@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home page</title>
+  <style>
+    body{
+    background-color: white;
+    color: black;
+    font-family: 25px;
+    margin: 1px;
+    padding: 10px;
+}
+main {
+    text-align: center;
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 60px;
+    line-height: 1.6;
+}
+.card {
+  background-color: white;
+  border: 15px solid rgb(144, 144, 237);
+  border-radius: 15px;
+  padding: 15px;
+  margin: 15px 150px;
+  box-shadow: 35px 35px 35px rgba(0,0,0,0.05);
+}
+footer{
+    text-align: right;
+}
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+
+  <main>
+    <h1 class="card">Welcome to my website.</h1>
+    <p class="card">This is the home page.</p>
+  </main>
+
+  <div id="footer"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+  // load header
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
+    });
+
+  // load footer
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
+});
+</script>
+</body>
+</html>

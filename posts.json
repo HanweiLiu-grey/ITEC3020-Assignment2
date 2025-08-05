@@ -1,7 +1,13 @@
 [
   {
-    "title": "Welcome to My Blog",
+    "title": "Dark/Light mode",
     "date": "2025-08-04",
-    "content": "This is the first post on my personal blog. "
+    "content": "I write the button and set id is Switch button,and write strings by div to tell users how to change dark or light mode.Then I write style to make my page more clearly.Then I write script,first,I let the coconst get the ElementById:SwitchButton,then if the current theme is dark,the backroung color will be dark and the text on button will be 'Switch to light mode'.Last set a event listener to check the funtion click,when users click the button,the page will change to dark or light mode. "
+  },
+  
+  {
+     "title": "Blog",
+    "date": "2025-08-04",
+    "content":"In part2,I build a new html file, scripts.js file and posts.json file,I use the scripts file import the content from the json file into the HTML file,then I write the style to make my page more clerly.At first I can't open my blog in my edge,I tried other browsers but still couldn't view the content of my json file on the webpage,then I found two ways to solve the problem,first I need to change scripts file,it's won't be correct I think.So I tried anohter way,it's download a plugin solved this problem for me. The principle is to use my own network server."
   }
 ]
